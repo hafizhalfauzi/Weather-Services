@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Cuaca</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 leading-normal font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white p-6 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fas fa-cloud-sun text-blue-500 mr-2"></i>
+                Informasi Cuaca
+            </h1>
+            
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mx-auto mt-8">
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+            <h1 class="text-xl font-semibold mb-4">Informasi Cuaca</h1>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                <p><strong>Lokasi:</strong> {{ location }}</p>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-cloud text-blue-500 mr-2"></i>
+                <p><strong>Cuaca:</strong> {{ weather }}</p>
+            </div>
+            <div class="flex items-center mb-4">
+                <i class="fas fa-thermometer-three-quarters text-blue-500 mr-2"></i>
+                <p><strong>Suhu:</strong> {{ temperature }}°C</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

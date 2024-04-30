@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakiraan Cuaca</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-normal font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white p-6 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fas fa-cloud-sun text-blue-500 mr-2"></i>
+                Prakiraan Cuaca
+            </h1>
+         
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mx-auto mt-8">
+
+        <h2 class="text-xl font-semibold mb-4">Prakiraan Cuaca untuk {{ location }}</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {% for forecast in forecast_data %}
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <p class="text-lg font-semibold mb-2">{{ forecast['time'] }}</p>
+                <p class="text-gray-600 mb-2">
+                    <i class="fas fa-cloud-sun text-blue-500 mr-2"></i>
+                    {{ forecast['weather'] }}
+                </p>
+                <p class="text-gray-600">
+                    <i class="fas fa-thermometer-half text-blue-500 mr-2"></i>
+                    {{ forecast['temperature'] }}°C
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+</html>
